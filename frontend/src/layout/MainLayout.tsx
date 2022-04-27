@@ -32,7 +32,6 @@ const DrawerHeader = styled('div')(({ theme }) => ({
   display: 'flex',
   alignItems: 'center',
   padding: theme.spacing(0, 1),
-  // necessary for content to be below app bar
   ...theme.mixins.toolbar,
   justifyContent: 'flex-end',
 }));
@@ -49,9 +48,7 @@ function MainLayout({ children }: props) {
   return (
     <Box sx={{ display: 'flex' }}>
       <CssBaseline />
-      {/* <React.Suspense fallback={<></>}> */}
       <Header open={open} drawerWidth={drawerWidth} handleDrawerOpen={handleDrawerOpen} />
-      {/* </React.Suspense> */}
       <SideBar open={open} drawerWidth={drawerWidth} DrawerHeader={DrawerHeader} handleDrawerClose={handleDrawerClose} />
       <Main open={open}>
         <DrawerHeader />

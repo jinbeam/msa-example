@@ -1,0 +1,37 @@
+spring:
+  jpa:
+    show-sql: true
+  multi-datasource:
+    sample:
+      url: "jdbc:mysql://localhost:3306/sample?serverTimezone=UTC&autoReconnect=true&useUnicode=true&characterEncoding=utf8"
+      username: "root"
+      password: root
+      driverClassName: com.mysql.cj.jdbc.Driver
+
+servlet:
+    multipart:
+      location: D:/image
+      max-file-size: 100MB
+      max-request-size: 100MB
+
+server:
+  port: 80
+
+ezpmp:
+  swagger:
+    base-package: "com.sample.api"
+    enabled: false
+  redis: ### Redis 설정
+    holdingTime: '1'
+    enabled: true
+    host: localhost
+    port: 6379
+    password: ""
+    lettuce:
+      pool:
+        max-active: 10
+        max-idle: 10
+        min-idle: 2
+
+properties:
+  aesKey: Qwer!234
